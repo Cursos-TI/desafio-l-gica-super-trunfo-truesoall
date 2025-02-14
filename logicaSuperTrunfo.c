@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    // Inicia a declaração de valores a serem informados pelo usuário
+    // Inicia a declaração de valores a serem informados pelo usuário (+ variáveis para cálculo de densidade populacional e PIB per capita)
     int pop, ptstur, pop1, ptstur1;
     float pib, area, pib1, area1, denpop, denpop1, pibpc, pibpc1;
     char estado[50], cidade[50], codcarta[50];
