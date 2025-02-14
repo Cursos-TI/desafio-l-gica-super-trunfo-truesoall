@@ -61,7 +61,7 @@ int main() {
     int valor;
 
     do { //casos de comparação de cartas mais um do-while para continuar a pediir entradas caso o valor seja inválido
-        printf("Escolha um parametro para comparação das cartas: \n -- 1. População total  2. Área  3. PIB  4. Densidade populacional  5. PIB per capita -- \n");
+        printf("Escolha um parametro para comparação das cartas: \n -- 1. População total  2. Área  3. PIB  4. Densidade populacional  5. PIB per capita 6. Número de pontos turísticos -- \n");
         scanf("%d", &valor);
     
         switch (valor) {
@@ -69,53 +69,50 @@ int main() {
             case 1:
             printf("Carta 1 - Estado: %s, Cidade: %s, População: %d \n", estado, cidade, pop);
             printf("Carta 2 - Estado: %s, Cidade: %s, População: %d \n", estado1, cidade1, pop1);
-                if (pop > pop1)
-                    printf("A carta %s tem a maior população! \n", codcarta);
-                else
-                    printf("A carta %s tem a maior população! \n", codcarta1);
-                break;
-    
+                
+                pop > pop1 ? printf("A carta %s tem a maior população! \n", codcarta) : printf("A carta %s tem a maior população! \n", codcarta1);
+                break;    
+
             case 2:
             printf("Carta 1 - Estado: %s, Cidade: %s, Área: %f km²\n", estado, cidade, area);
             printf("Carta 2 - Estado: %s, Cidade: %s, Área: %f km²\n", estado1, cidade1, area1);
-                if (area > area1)
-                    printf("A carta %s tem a maior área! \n", codcarta);
-                else
-                    printf("A carta %s tem a maior área! \n", codcarta1);
-                break;
-    
+                
+                area > area1 ? printf("A carta %s tem a maior área! \n", codcarta) : printf("A carta %s tem a maior área! \n", codcarta1);
+                break;    
+
             case 3:
             printf("Carta 1 - Estado: %s, Cidade: %s, PIB: R$ %f milhões\n", estado, cidade, pib);
             printf("Carta 2 - Estado: %s, Cidade: %s, PIB: R$ %f milhões\n", estado1, cidade1, pib1);
-                if (pib > pib1)
-                    printf("A carta %s tem o maior PIB! \n", codcarta);
-                else
-                    printf("A carta %s tem o maior PIB! \n", codcarta1);
-                break;
-    
+                
+                pib > pib1 ? printf("A carta %s tem o maior PIB! \n", codcarta) : printf("A carta %s tem o maior PIB! \n", codcarta1);
+                break;    
+                
             case 4:
             printf("Carta 1 - Estado: %s, Cidade: %s, Densidade: %.2f hab/km²\n", estado, cidade, denpop);
             printf("Carta 2 - Estado: %s, Cidade: %s, Densidade: %.2f hab/km²\n", estado1, cidade1, denpop1);
-                if (denpop < denpop1)
-                    printf("A carta %s tem a menor densidade populacional! \n", codcarta);
-                else
-                    printf("A carta %s tem a menor densidade populacionnal! \n", codcarta1);
+                
+                denpop < denpop1 ? printf("A carta %s tem a menor densidade populacional! \n", codcarta) : printf("A carta %s tem a menor densidade populacionnal! \n", codcarta1);
                 break;
     
             case 5:
             printf("Carta 1 - Estado: %s, Cidade: %s, PIB per capita: R$ %.2f por habitante\n", estado, cidade, pibpc);
             printf("Carta 2 - Estado: %s, Cidade: %s, PIB per capita: R$ %.2f por habitante \n", estado1, cidade1, pibpc1);
-                if (pibpc > pibpc1)
-                    printf("A carta %s tem o maior PIB per capita! \n", codcarta);
-                else
-                    printf("A carta %s tem o maior PIB per capita! \n", codcarta1);
+                
+            pibpc > pibpc1 ? printf("A carta %s tem o maior PIB per capita! \n", codcarta) : printf("A carta %s tem o maior PIB per capita! \n", codcarta1);
                 break;
     
+            case 6:
+            printf("Carta 1 - Estado: %s, Cidade: %s, Pontos turísticos:  %d pontos turísticos \n", estado, cidade, ptstur);
+            printf("Carta 2 - Estado: %s, Cidade: %s, Pontos turísticos:  %d pontos turísticos \n", estado1, cidade1, ptstur1);
+                
+                ptstur > ptstur1 ? printf("A carta %s tem mais pontos turísticos!", codcarta) : printf("A carta %s tem mais pontos turísticos!", codcarta1);
+                break;
+
             default:
                 printf("Número inválido! Tente novamente.\n");
                 break;
         }
-    } while (valor < 1 || valor > 5);  // Repetir enquanto a entrada for inválida
+    } while (valor < 1 || valor > 6);  // Repetir enquanto a entrada for diferente dos pedidos
 
  
 
